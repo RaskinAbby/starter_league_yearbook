@@ -1,12 +1,13 @@
 require 'open-uri'
+
 class Student < ActiveRecord::Base
   attr_accessible :name, :photo_url, :section, :twitter
-end
+
 
 def Student.fetch(course_number)
   url = "http://yearbook-api.herokuapp.com/2013/Spring/#{course_number}.json"
 
-  raw_response = open(url).red
+  raw_response = open(url).read
   result = JSON.parse(raw_response)
   list_from_api = result["students"]
 
@@ -22,7 +23,7 @@ def Student.fetch(course_number)
     array_of_students << s
   end
 
-  return array_of_students
-end
+    return array_of_students
+  end
 end
 
