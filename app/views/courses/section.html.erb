@@ -1,0 +1,24 @@
+<nav>
+  <a href="http://localhost:3000/courses/36">AM Dev</a> ||
+  <a href="http://localhost:3000/courses/37">PM Dev</a> ||
+  <a href="http://localhost:3000/courses/39">Beginner HTML Tuesday</a> ||
+  <a href="http://localhost:3000/courses/42">Beginner HTML Wednesday</a> ||
+  <a href="http://localhost:3000/courses/41">Advanced HTML</a> ||
+  <a href="http://localhost:3000/courses/40">Visual Design</a> ||
+  <a href="http://localhost:3000/courses/38">User Experience</a>
+</nav>
+
+<h1><%= @course_title %></h1>
+
+<ul>
+  <% @students.shuffle.each do |stud| %>
+  <li>
+    <img src="<%= stud.photo_url %>">
+    <h3>
+      <a href="https://twitter.com/<%= stud.twitter %>">
+        <%= stud.name %>
+      </a>
+    </h3>
+  </li>
+  <% end %>
+</ul>
