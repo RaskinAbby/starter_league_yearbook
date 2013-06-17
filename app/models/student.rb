@@ -20,10 +20,10 @@ def Student.fetch(course_number)
     s.name = student_hash["first_name"] + " " + student_hash["last_name"]
     s.section = result["name"]
 
-    array_of_students << s
+    students_array << s
   end
 
-    return array_of_students
+    return students_array
   end
 end
 
